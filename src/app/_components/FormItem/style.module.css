@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+
+.iconButton_Container {
+    display: flex;
+    column-gap: 4px;
+}
+
+.iconButton {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+
+}
+.iconButton > svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    color: var(--muted-foreground)
+}
+.iconButton:hover {
+    background-color: var(--secondary);
+}
