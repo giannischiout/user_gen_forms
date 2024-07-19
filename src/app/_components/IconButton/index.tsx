@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "@/app/_components/FormItem/style.module.css";
+import styles from "@/app/_components/IconButton/style.module.css";
 
 type IconButtonProps = {
     icon: React.ReactElement;
-    onClick: () => void;
+    onClick?: () => void;
     className?: string;
     [key: string]: any; // Allow any additional props
 
@@ -12,8 +12,10 @@ type IconButtonProps = {
 
 // styles in global.css
 export const IconButton = ({icon, onClick}: IconButtonProps ) => {
+
+
     return (
-        <button className={styles.iconButton}>
+        <button type="button" onClick={onClick} className={styles.iconButton}>
             {React.cloneElement(icon, {
                 className: styles.icon
             } )}
