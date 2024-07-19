@@ -1,13 +1,10 @@
 
 
-
-import {CreateFormActions} from "@/app/_sections/CreateForm/Actions";
+import CreateForm from "@/app/_components/CreateForm";
 export default function Home() {
   return (
         <section className="create_new_container">
-            <form className="create_new_form">
-                <CreateFormActions />
-            </form>
+            <CreateForm />
         </section>
     );
 }

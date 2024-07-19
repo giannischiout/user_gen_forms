@@ -1,102 +1,50 @@
 "use client"
-import React, {ReactNode, useState} from "react";
+import React, {ReactElement, ReactNode, useState} from "react";
 import styles from "./style.module.css"
 import { Trash2,Plus,Grip, Search,Minus, Equal, SquareCheckBig, CircleCheckBig, ChevronDown, Hash,AtSign, Phone, Link } from 'lucide-react';
 import {IconButton} from "@/app/_components/IconButton";
 import Modal from "@/app/_components/Modal";
-
-const Options = [
-    {
-        groupLabel: "Input blocks",
-        inputs: [
-            {
-                label: "Short answer",
-                icon: <Minus/>
-            },
-            {
-                label: "Long answer",
-                icon: <Equal/>
-            },
-            {
-                label: "Multiple choise",
-                icon: <CircleCheckBig />
-            },
-            {
-                label: "Checkboxes",
-                icon: <SquareCheckBig  />
-            },
-            {
-                label: "Dropdown",
-                icon: <ChevronDown />
-            },
-            {
-                label: "Multi-select",
-                icon: <Trash2 />
-            },
-            {
-                label: "Number",
-                icon: < Hash />
-            },
-            {
-                label: "Email",
-                icon: <AtSign />
-            },
-            {
-                label: "Phone Number",
-                icon: <Phone />
-            },
-            {
-                label: "Link",
-                icon: <SquareCheckBig />
-            }
-        ]
-    },   {
-        groupLabel: "Layout blocks",
-        inputs: [
-
-            {
-                label: "Number",
-                icon: <Trash2 />
-            },
-            {
-                label: "Phone",
-                icon: <Trash2 />
-            },
-            {
-                label: "Date",
-                icon: <Trash2 />
-            },
-            {
-                label: "Time",
-                icon: <Trash2 />
-            },
-            {
-                label: "Paragraph",
-                icon: <Trash2 />
-            },
-            {
-                label: "Dropdown",
-                icon: <Trash2 />
-            },
-            {
-                label: "Radio",
-                icon: <Trash2 />
-            },
-            {
-                label: "Checkbox",
-                icon: <Trash2 />
-            }
-        ]
-    },
-]
+import {InputOptions as Options} from "./options";
+import {TypeToInsert} from "@/app/_components/TypeToInsert";
 
 
+interface InputOption {
+    icon: ReactElement ;
+    label: string;
+}
+
+interface GroupOption {
+    groupLabel: string;
+    inputs: InputOption[];
+}
+
+interface OptionsProps {
+    options: GroupOption[];
+    searchTerm: string;
+}
+
+
+
+export const FormActionsAndSearch = () => {
+    const [searchValue,setSearchValue] = useState<string>("")
+    const handleChange = () => {
+        console.log("Change")
+
+    }
+    return (
+        <div className={styles.formActonsSearch}>
+            <CreateFormActions/>
+            <TypeToInsert onChange={ handleChange} value={searchValue} />
+        </div>
+    )
+}
 export const CreateFormActions = () => {
+    //
     const [open, setOpen] = useState(false);
     const [search, setSearch] = useState("");
     const [options, setOptions] = useState(Options);
+    //
     const handleSearch = (value: string) => {
-        console.log(value)
         setSearch(value);
         const filteredOptions = Options.map(option => ({
             ...option,
@@ -104,7 +52,7 @@ export const CreateFormActions = () => {
         })).filter(group => group.inputs.length > 0);
         setOptions(filteredOptions);
     }
-
+    //
     return (
         <div className={styles.container}>
             <div className={styles.btn_container}>
@@ -121,7 +69,6 @@ export const CreateFormActions = () => {
                         />
                         <div className={styles.modal_grid}>
                                 <InputGroups
-                                    label="Input Blocks"
                                     options={options}
                                     searchTerm={search}
                                 />
@@ -137,24 +84,9 @@ export const CreateFormActions = () => {
 }
 
 
-interface InputProps {
-    size: number;
-}
-
-interface InputOption {
-    icon: React.ComponentType<InputProps> ;
-    label: string;
-}
-
-interface GroupOption {
-    groupLabel: string;
-    inputs: InputOption[];
-}
-
-interface OptionsProps {
-    options: GroupOption[];
-    searchTerm: string;
-}
+// ......................................................
+// Map all the inputs from the Options config and display them in groups, with a label and child elements:
+// ......................................................
 const InputGroups = ({ options, searchTerm}: OptionsProps) => {
     return (
         <div className={styles.inputGroupContainer}>
@@ -176,7 +108,9 @@ const InputGroups = ({ options, searchTerm}: OptionsProps) => {
     )
 }
 
-
+// ......................................................
+// Right screen details of the modal, when an input is clicked:
+// ......................................................
 const Details = () => {
     return (
         <div className={styles.modal_details}>
@@ -185,6 +119,9 @@ const Details = () => {
     )
 }
 
+// ......................................................
+// Search and filter inputs:
+// ......................................................
 type SearchInputProps = {
     value: string;
     setValue: (value: string) => void;
