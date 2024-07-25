@@ -1,0 +1,43 @@
+.container {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+.drop_container {
+    width: 60%;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    row-gap: 1rem;
+
+}
+
+/*---------------------------- DRAG AND DROP ----------------------------*/
+
+
+
+.drop_indicator {
+    background-color: var(--primary-faded);
+    height: 5px;
+    border-radius: var(--radius-2);
+    width: 100%;
+}
+.drop_indicator_active {
+    background-color: greenyellow;
+}
+.drop_item {
+    background-color: rgba(91, 91, 91, 0.38);
+    border-radius: 30px;
+    padding: 10px;
+
+}
+
+.item_active {
+    background-color: yellow;
+}

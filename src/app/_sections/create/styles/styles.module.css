@@ -1,0 +1,158 @@
+.container {
+    padding: 14px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    background-color: #151515;
+}
+
+
+
+.rightSidebar {
+    width: 260px;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+
+}
+ /*---------------------------------------- SIDEBAR ----------------------------------------*/
+.sidebar_container {
+    overflow: hidden;
+    width: 260px;
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-black);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+
+}
+
+.sidebar_open {
+    height: 100%;
+}
+
+
+.sidebar_container > div {
+    padding: 1.5rem;
+
+}
+
+.sidebar_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.sidebar_nav_border {
+    border-bottom: 1px solid var(--border-light);
+
+}
+/*this is the logo and collapse button*/
+.sidebar_nav > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/*this is the fileName input*/
+.sidebar_nav > div:nth-child(2) {
+    height: 30px; /* fixed height for the div that contains the input -> no layout swifts  */
+    display: flex;
+    align-items: center;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-1);
+}
+.logo svg {
+    font-size: 26px;
+}
+
+
+
+.minimize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.minimize:hover {
+    background-color: var(--card-light);
+    box-shadow: var(--shadow-black);
+    color: var(--primary);
+    transform: scale(0.9);
+}
+
+/*file name*/
+.fileName_container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.fileName_text {
+    display: inline;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.nameInput {
+    border: 1px solid var(--primary);
+    padding: 5px;
+    color: white;
+    font-size: 1.7rem;
+    width: 100%;
+
+}
+.nameInput:focus {
+    outline: none;
+}
+
+
+/*---------------------------- CONTENT ----------------------------*/
+.search_container {
+    display: flex;
+    column-gap: 0.8rem;
+    border-bottom: 1px solid var(--border-light);
+
+}
+
+.iconButton {
+    cursor: pointer;
+    background-color: var(--card-light);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transition: color 0.3s ease;
+}
+.iconButton:hover {
+    transform: scale(0.9);
+   color: var(--primary);
+
+}
+.iconButton svg {
+    width: 16px;
+    height: 16px;
+}
+

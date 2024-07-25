@@ -4,41 +4,40 @@
   padding: 0;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 html {
   font-size: 62.5%;
 }
-body {
-  font-size: 1.6rem;
-  width: 100%;
-  min-height: 100vh;
-}
+
 :root {
+
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222.2, 84%, 4.9%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(222.2, 84%, 4.9%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(222.2, 84%, 4.9%);
-  --primary: hsl(222.2, 47.4%, 11.2%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(210, 40%, 96.1%);
-  --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
+  /* ====== primary color ====== */
+  --primary: #efce2a;
+  --primary-faded: rgba(239, 206, 42, 0.29);
+  --primary-foreground: #188f8f;
+  /* ====== text color ====== */
+  --text: #fff;
+  --text-light: #c2c2c2;
+  /* ====== card color ====== */
+  --card: #2C2C2C;
+  --card-light: #3C3C3C;
+
+  --secondary:#F1F5F9;
+  --secondary-foreground: #868585;
+  --secondary-hover: #e6e6e6;
   --muted: hsl(210, 40%, 96.1%);
   --muted-foreground: hsl(215.4, 16.3%, 46.9%);
   --accent: hsl(210, 40%, 96.1%);
   --accent-foreground: hsl(222.2, 47.4%, 11.2%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --input: hsl(214.3, 31.8%, 91.4%);
-  --ring: hsl(222.2, 84%, 4.9%);
+  /* ====== card color ====== */
+  --border: #202020;
+  --border-light: rgba(203, 203, 203, 0.12);
   --radius: 0.5rem;
-    --shadow-1:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --radius-2: 1.2rem;
+  --shadow-black: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-1: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-2:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   /*Text*/
   --text-xs: 1.2rem;
   --text-sm: 1.4rem;
@@ -47,7 +46,37 @@ body {
     --text-xl: 2rem;
 }
 
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+}
 
+
+input {
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--card-light);
+  border: none;
+  padding: 0.8rem 2rem 0.8rem 3rem;
+  border-radius: var(--radius);
+  width: 100%;
+  color: white;
+
+}
+
+input:focus {
+  outline: 1px solid var(--primary);
+  box-shadow: none;
+}
+
+svg {
+  font-size: 2rem;
+}
 
 #root_modal {
   blackground-color: rgba(0, 0, 0, 0.5);
@@ -72,11 +101,3 @@ body {
 
 .iconButton:hover {
 }
-@layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
-  }

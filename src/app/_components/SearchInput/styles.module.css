@@ -1,0 +1,21 @@
+
+.container {
+    position: relative;
+}
+.container svg {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    font-size: 1.5rem;
+    transform: translateY(-50%);
+    color: var(--text-light)
+}
+.search_input {
+    padding: 0.8rem 2rem 0.8rem 3rem;
+}
+
+
+
+.search_input::placeholder {
+    color: var(--text-light);
+}
