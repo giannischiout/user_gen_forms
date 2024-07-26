@@ -23,7 +23,7 @@ const generateUniqueID = () => {
 
 
 export function InputOptionsContent() {
-    const {setDragData, setIsDragging} = useDrag()
+    const { setIsDragging, isDragging} = useDrag()
     const [state, setState] = useState<StateProps>({
         isOpen: true,
         index: null,
@@ -42,13 +42,11 @@ export function InputOptionsContent() {
         // Set the data for the drag event
         if (e.dataTransfer) {
             e.dataTransfer.setData("input", JSON.stringify(inputInfo));
+
         } else {
             console.error("e.dataTransfer is null");
         }
 
-        setDragData((prev) => ({
-            ...prev, ...inputInfo
-        }));
     };
 
 
@@ -83,7 +81,8 @@ export function InputOptionsContent() {
                                         uuid: generateUniqueID()
                                     })}
                                     key={index}
-                                    className={styles.input_container}
+
+                                    className={`${styles.input_container} ${isDragging ? styles.dragging : ''} `}
                                 >
                                     {input.icon}
                                     <span>{input.label}</span>
