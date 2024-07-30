@@ -1,33 +1,46 @@
 .button {
-    background-color: var(--primary);
     height: 35px;
     width: 140px;
     outline: none;
     border-radius: 5px;
     border: none;
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: var(--shadow-1);
+}
 
+.button:hover {
+    transform: scale(0.98);
+}
+
+
+/* ------------- COLOR VARIANTS ------------- */
+.secondary {
+    background-color: var(--secondary);
+    color:var(--secondary-foreground);
+}
+
+.secondary:hover {
+    background-color: var(--secondary-hover);
 
 }
 
+/* ------------- SIZE VARIANTS ------------- */
+.small {
+    height: 30px;
+    width: 110px;
+}
+
+/* ------------- ICON BUTTON ------------- */
 .button_icon {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 5px;
 }
-.primary {
-}
 
-.secondary {
-    background-color: var(--secondary);
-    color:var(--secondary-foreground);
-
-}
-
-.secondary:hover {
-    color: var(--primary-foreground);
-    background-color: var(--primary-light);
-}
 
 .icon {
     font-size: 15px;

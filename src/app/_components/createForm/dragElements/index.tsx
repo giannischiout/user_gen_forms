@@ -1,11 +1,12 @@
 "use client"
-import {INPUT_OPTIONS} from "@/app/_components/createForm/options";
-import styles from "./style.module.css";
+import styles from "./styles.module.css";
 import React, {useState} from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
-import DragItem from "@/app/_components/createForm/dragItem";
-import {InputGroup} from "@/app/_types/createForm";
+import {DragItemProps, DropItemProps, InputGroup} from "@/app/_types/createFormTypes";
+import DragItem from "@/app/_components/createForm/dragElements/dragItem";
+import {INPUT_OPTIONS} from "@/app/_components/createForm/dragElements/options";
+
 
 interface StateProps {
     isOpen: boolean;
@@ -45,8 +46,14 @@ export function DragElements() {
                     </div>
                     {condition(index) && (
                         <div className={`${styles.inputs_container} ${condition(index) && styles.inputs_animation}`}>
-                            {group.inputs.map((input, index) => (
-                                <DragItem key={input.uuid} formElement={input}  />
+                            {group.inputs.map((input: DragItemProps) => (
+                                <DragItem
+                                    id={input.id}
+                                    key={input.id}
+                                    label={input.label}
+                                    icon={input.icon}
+                                    type={input.type}
+                                />
                             ))}
                         </div>
                     )}

@@ -13,9 +13,9 @@ html {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222.2, 84%, 4.9%);
   /* ====== primary color ====== */
-  --primary: #efce2a;
-  --primary-faded: rgba(239, 206, 42, 0.29);
-  --primary-foreground: #188f8f;
+  --primary: #1cc0d6;
+  --primary-faded: rgba(28, 192, 214, 0.64);
+  --primary-foreground: #191919;
   /* ====== text color ====== */
   --text: #fff;
   --text-light: #c2c2c2;
@@ -23,15 +23,16 @@ html {
   --card: #2C2C2C;
   --card-light: #3C3C3C;
 
-  --secondary:#F1F5F9;
-  --secondary-foreground: #868585;
-  --secondary-hover: #e6e6e6;
+  --secondary: #303030;
+  --secondary-hover: #3a3a3a;
+  --secondary-foreground: #bcbcbc;
+
   --muted: hsl(210, 40%, 96.1%);
   --muted-foreground: hsl(215.4, 16.3%, 46.9%);
   --accent: hsl(210, 40%, 96.1%);
   --accent-foreground: hsl(222.2, 47.4%, 11.2%);
   /* ====== card color ====== */
-  --border: #202020;
+  --border: #403d3d;
   --border-light: rgba(203, 203, 203, 0.12);
   --radius: 0.5rem;
   --radius-2: 1.2rem;
@@ -62,7 +63,7 @@ input {
   appearance: none;
   background-color: var(--card-light);
   border: none;
-  padding: 0.8rem 2rem 0.8rem 3rem;
+  padding: 0.8rem;
   border-radius: var(--radius);
   width: 100%;
   color: white;
@@ -95,9 +96,8 @@ svg {
 
 }
 
-.iconButton {
-  background-color: var(--secondary);
-}
+/*.iconButton {*/
+/*  background-color: var(--secondary);*/
+/*}*/
 
-.iconButton:hover {
-}
+

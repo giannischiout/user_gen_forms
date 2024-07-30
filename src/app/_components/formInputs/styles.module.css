@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+   row-gap: 0.8rem;
+}
+
+.input {
+    background-color: transparent;
+    border: 1px solid var(--border)
+}
+
+.label {
+    font-size: 1.4rem;
+    color: #c8c8c8;
+}
+.description {
+    font-size: 1.3rem;
+    color: #8e8e8e;
+    margin-left: 4px;
+
+}

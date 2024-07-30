@@ -1,5 +1,5 @@
 import { Trash2, Plus, Grip, Search, Minus, Equal, SquareCheckBig, CircleCheckBig, ChevronDown, Hash, AtSign, Phone, Link } from 'lucide-react';
-import {InputGroup} from "@/app/_types/createForm";
+import {InputGroup} from "@/app/_types/createFormTypes";
 
 // export const INPUT_OPTIONS = [
 //     {
@@ -116,7 +116,13 @@ export const INPUT_OPTIONS: InputGroup[] = [
                 label: "Short answer",
                 icon: <Minus />,
                 type: "text-input"
+            },  {
+                id: "input-long-answer",
+                label: "Long answer",
+                icon: <Equal />,
+                type: "text-input"
             },
-            ]
+
+        ]
     }
 ]

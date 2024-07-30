@@ -1,12 +1,11 @@
 "use client"
 import React, { createContext, useState, useContext, ReactNode } from 'react';
-import {DragItemProps} from "@/app/_types/createForm";
+import {DragItemProps, DropItemProps} from "@/app/_types/createFormTypes";
 
 interface DragContextProps {
-    dragData: DragItemProps[];
-    setDragData: React.Dispatch<React.SetStateAction<DragItemProps[]>>;
-    dragItems: DragItemProps[];
-    setDragItems: React.Dispatch<React.SetStateAction<DragItemProps[]>>;
+    dragData: DropItemProps[];
+    setDragData: React.Dispatch<React.SetStateAction<DropItemProps[]>>;
+
 }
 
 
@@ -14,12 +13,11 @@ const DragContext = createContext<DragContextProps | undefined>(undefined);
 
 
 export const DragProvider = ({children}: {children: ReactNode}) => {
-    const [dragData, setDragData] = useState<DragItemProps[]>([]);
-    const [dragItems, setDragItems] = useState<DragItemProps[]>([])
+    const [dragData, setDragData] = useState<DropItemProps[]>([]);
+    const [isPreview, setIsPreview] = useState<boolean>(false);
     return (
        <DragContext.Provider value={{
            dragData, setDragData,
-           dragItems, setDragItems
        }}>
      {children}
  </DragContext.Provider>

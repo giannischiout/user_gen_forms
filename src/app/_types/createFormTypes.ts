@@ -2,9 +2,10 @@ import {ReactElement} from "react";
 
 
 
-export interface formElementProps {
+export interface DropItemProps {
     uuid: string;
     type: string;
+    label: string;
 }
 
 export interface  DragItemProps {
@@ -12,6 +13,7 @@ export interface  DragItemProps {
     id: string;
     label: string;
     type: string;
+    uuid?: string;
 }
 
 

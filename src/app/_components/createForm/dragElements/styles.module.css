@@ -1,0 +1,141 @@
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.group_container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border-light);
+
+}
+.container::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 50px;
+    background-color: #353535;
+}
+.container::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 50px;
+    background-color: #5f5f5f;
+}
+
+
+.group_label_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+
+.group_label {
+    font-weight: 400;
+    color: #bdbdbd;
+    font-size: var(--text-sm);
+    transition: color 0.2s ease;
+}
+
+.group_label_active  {
+    color: #ffffff;
+
+}
+
+
+/* ----------------------------- STYLE THE SIDEBAR INPUTS ---------------------------- */
+.inputs_container {
+    display: grid;
+    row-gap: 0.8rem;
+    opacity: 0;
+    margin-bottom: 1rem;
+}
+
+.inputs_animation {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ----------------------------- STYLE THE SIDEBAR BUTTONS ---------------------------- */
+
+.drag_item_container {
+    letter-spacing: 1.2px;
+    background-color: var(--card-light);
+    border-radius: var(--radius);
+    display: flex;
+    row-gap: 0.8rem;
+    align-items: center;
+    padding: 6px;
+    column-gap: 0.8rem;
+    box-shadow: var(--shadow-black);
+    border: 1px solid var(--border-light);
+    justify-content: space-between;
+    cursor: grab;
+}
+
+.drag_item_container div:nth-child(1) {
+    display: flex;
+    column-gap: 0.8rem;
+}
+.drag_item_container div:nth-child(1) span {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: 300;
+
+}
+.dragIcon {
+    background-color: #323232;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    padding: 2px;
+    border: 1px solid rgba(122, 122, 122, 0.42);
+
+}
+
+.drag_item span {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+.drag_item svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: #b1b1b1;
+}
+
+
+.drag_item_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+
+}
+
+.isDragging {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    box-shadow: var(--shadow-1);
+    color: #ffffff;
+}
+
+
+
+
+
+
