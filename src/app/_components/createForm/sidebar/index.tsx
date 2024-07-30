@@ -1,6 +1,6 @@
 "use client";
 import React, {useEffect} from "react";
-import styles from "./styles/styles.module.css"
+import styles from "./sidebar.module.css"
 import { FiMinimize } from "react-icons/fi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import {useState, useRef} from "react";
@@ -8,7 +8,7 @@ import useClickOutside from "@/app/hooks/useClickOutside";
 import Image from "next/image";
 import {SearchInput} from "@/app/_components/SearchInput";
 import { VscSettings } from "react-icons/vsc";
-import {InputOptionsContent} from "@/app/_sections/create/inputOptions";
+import {DragElements} from "@/app/_components/createForm/dragElements";
 // --------------------
 // --- typescript ---
 // --------------------
@@ -59,7 +59,6 @@ export function Sidebar() {
                 </div>
                 {!isCollapsed && (
                     <SidebarOpenContent
-
                     />
                 )}
             </div>
@@ -72,13 +71,13 @@ export function Sidebar() {
 
 const SidebarOpenContent = () => {
     return (
-       <>
-           <div className={styles.search_container}>
-               <SearchInput />
-               <Filter />
-           </div>
-           <InputOptionsContent />
-       </>
+        <>
+            <div className={styles.search_container}>
+                <SearchInput />
+                <Filter />
+            </div>
+            <DragElements />
+        </>
     )
 }
 
@@ -124,7 +123,7 @@ const TitleInput = ({fileName, setFileName, }: TitleInputProps ) => {
     }, [isEdit]);
     return (
         <div >
-        {!isEdit ? (
+            {!isEdit ? (
                 <div className={styles.fileName_container}>
                  <span
                      className={styles.fileName_text}

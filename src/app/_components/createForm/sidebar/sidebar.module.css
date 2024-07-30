@@ -8,7 +8,6 @@
 }
 
 
-
 .rightSidebar {
     width: 260px;
     background-color: black;
@@ -19,9 +18,8 @@
     padding: 20px;
 
 }
- /*---------------------------------------- SIDEBAR ----------------------------------------*/
+/*---------------------------------------- SIDEBAR ----------------------------------------*/
 .sidebar_container {
-    overflow: hidden;
     width: 260px;
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-black);
@@ -148,7 +146,7 @@
 }
 .iconButton:hover {
     transform: scale(0.9);
-   color: var(--primary);
+    color: var(--primary);
 
 }
 .iconButton svg {

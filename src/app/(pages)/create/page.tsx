@@ -1,11 +1,8 @@
 
-import styles from "./style.module.css";
-import CreateForm from "@/app/_sections/create";
-
+import CreateFormPage from "@/app/_components/createForm";
 export default function Page() {
-
     return (
-        <CreateForm />
+            <CreateFormPage />
     )
 }
 
